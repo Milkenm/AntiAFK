@@ -13,11 +13,19 @@ namespace AntiAfkV2
 		private void Main_Load(object sender, EventArgs e)
 		{
 			this.Hide();
+			enabledToolStripMenuItem.Checked = true;
 		}
 
 		private void timer_Tick(object sender, EventArgs e)
 		{
-			SendKeys.Send("{SCROLLLOCK}");
+			if (enabledToolStripMenuItem.Checked)
+			{
+				try
+				{
+					SendKeys.Send("{SCROLLLOCK}");
+				}
+				catch { }
+			}
 		}
 
 		private void sairToolStripMenuItem_Click(object sender, EventArgs e)

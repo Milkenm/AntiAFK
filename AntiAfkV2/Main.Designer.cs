@@ -35,6 +35,8 @@ namespace AntiAfkV2
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.enabledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.contextMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -54,16 +56,30 @@ namespace AntiAfkV2
 			// contextMenuStrip
 			// 
 			this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enabledToolStripMenuItem,
+            this.toolStripSeparator,
             this.sairToolStripMenuItem});
 			this.contextMenuStrip.Name = "contextMenuStrip";
-			this.contextMenuStrip.Size = new System.Drawing.Size(94, 26);
+			this.contextMenuStrip.Size = new System.Drawing.Size(181, 76);
 			// 
 			// sairToolStripMenuItem
 			// 
 			this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
 			this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.sairToolStripMenuItem.Text = "Sair";
+			this.sairToolStripMenuItem.Text = "Exit";
 			this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+			// 
+			// enabledToolStripMenuItem
+			// 
+			this.enabledToolStripMenuItem.CheckOnClick = true;
+			this.enabledToolStripMenuItem.Name = "enabledToolStripMenuItem";
+			this.enabledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.enabledToolStripMenuItem.Text = "Enabled";
+			// 
+			// toolStripSeparator
+			// 
+			this.toolStripSeparator.Name = "toolStripSeparator";
+			this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
 			// 
 			// Main
 			// 
@@ -90,6 +106,8 @@ namespace AntiAfkV2
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem enabledToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 	}
 }
 
