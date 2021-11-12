@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AntiAfkV2.Properties;
+
+using System;
 using System.Windows.Forms;
 
 namespace AntiAfkV2
@@ -14,6 +16,9 @@ namespace AntiAfkV2
 		{
 			this.Hide();
 			enabledToolStripMenuItem.Checked = true;
+
+			this.LoadSettings();
+			timer.Start();
 		}
 
 		private void timer_Tick(object sender, EventArgs e)
@@ -22,7 +27,7 @@ namespace AntiAfkV2
 			{
 				try
 				{
-					SendKeys.Send("{SCROLLLOCK}");
+					SendKeys.Send(Settings.Default.Key);
 				}
 				catch { }
 			}
@@ -32,6 +37,23 @@ namespace AntiAfkV2
 		{
 			notifyIcon.Visible = false;
 			this.Close();
+		}
+
+		private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Options options = Options.GetInstance();
+			options.FormClosed += this.Options_FormClosed;
+			options.Show();
+		}
+
+		private void Options_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			this.LoadSettings();
+		}
+
+		private void LoadSettings()
+		{
+			timer.Interval = Convert.ToInt32(Settings.Default.Delay * Math.Pow(60, (int)Settings.Default.TimeUnit)) * 1000;
 		}
 	}
 }

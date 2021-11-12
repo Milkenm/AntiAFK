@@ -34,15 +34,15 @@ namespace AntiAfkV2
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.enabledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+			this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// timer
 			// 
-			this.timer.Enabled = true;
 			this.timer.Interval = 5000;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
@@ -57,17 +57,11 @@ namespace AntiAfkV2
 			// 
 			this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enabledToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.toolStripSeparator,
             this.sairToolStripMenuItem});
 			this.contextMenuStrip.Name = "contextMenuStrip";
-			this.contextMenuStrip.Size = new System.Drawing.Size(181, 76);
-			// 
-			// sairToolStripMenuItem
-			// 
-			this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-			this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.sairToolStripMenuItem.Text = "Exit";
-			this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+			this.contextMenuStrip.Size = new System.Drawing.Size(117, 76);
 			// 
 			// enabledToolStripMenuItem
 			// 
@@ -80,6 +74,20 @@ namespace AntiAfkV2
 			// 
 			this.toolStripSeparator.Name = "toolStripSeparator";
 			this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
+			// 
+			// sairToolStripMenuItem
+			// 
+			this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+			this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.sairToolStripMenuItem.Text = "Exit";
+			this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+			// 
+			// settingsToolStripMenuItem
+			// 
+			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+			this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.settingsToolStripMenuItem.Text = "Settings";
+			this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
 			// 
 			// Main
 			// 
@@ -108,6 +116,7 @@ namespace AntiAfkV2
 		private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem enabledToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 	}
 }
 

@@ -63,9 +63,9 @@ namespace AntiAfkV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon AFK_ICO {
+        internal static System.Drawing.Icon AFK_Black_ICO {
             get {
-                object obj = ResourceManager.GetObject("AFK_ICO", resourceCulture);
+                object obj = ResourceManager.GetObject("AFK_Black_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,9 +73,29 @@ namespace AntiAfkV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AFK_PNG {
+        internal static System.Drawing.Bitmap AFK_Black_PNG {
             get {
-                object obj = ResourceManager.GetObject("AFK_PNG", resourceCulture);
+                object obj = ResourceManager.GetObject("AFK_Black_PNG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon AFK_White_ICO {
+            get {
+                object obj = ResourceManager.GetObject("AFK_White_ICO", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AFK_White_PNG {
+            get {
+                object obj = ResourceManager.GetObject("AFK_White_PNG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
