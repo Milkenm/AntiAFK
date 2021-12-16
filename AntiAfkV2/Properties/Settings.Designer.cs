@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
+using static AntiAfkV2.Options;
+
 namespace AntiAfkV2.Properties {
     
     
@@ -38,9 +42,9 @@ namespace AntiAfkV2.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public Options.TimeUnit TimeUnit {
+        public TimeUnit TimeUnit {
             get {
-                return ((Options.TimeUnit)(this["TimeUnit"]));
+                return ((TimeUnit)(this["TimeUnit"]));
             }
             set {
                 this["TimeUnit"] = value;
@@ -56,6 +60,21 @@ namespace AntiAfkV2.Properties {
             }
             set {
                 this["Key"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public List<Schedule> SchedulesList
+        {
+            get
+            {
+                return ((List<Schedule>)(this["SchedulesList"]));
+            }
+            set
+            {
+                this["SchedulesList"] = value;
             }
         }
     }

@@ -54,6 +54,12 @@ namespace AntiAfkV2
 		private void LoadSettings()
 		{
 			timer.Interval = Convert.ToInt32(Settings.Default.Delay * Math.Pow(60, (int)Settings.Default.TimeUnit)) * 1000;
+			Settings.Default.SettingChanging += this.Default_SettingChanging;
+		}
+
+		private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
+		{
+			MessageBox.Show("settings changed");
 		}
 	}
 }

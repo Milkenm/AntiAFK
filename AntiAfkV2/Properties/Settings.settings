@@ -11,5 +11,8 @@
     <Setting Name="Key" Type="System.String" Scope="User">
       <Value Profile="(Default)">{SCROLLLOCK}</Value>
     </Setting>
+    <Setting Name="SchedulesList" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
