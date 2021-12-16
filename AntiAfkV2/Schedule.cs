@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AntiAfkV2
 {
@@ -11,16 +12,5 @@ namespace AntiAfkV2
 		public List<DayOfWeek> DaysOfWeek { get; set; }
 		public bool EnabledState { get; set; }
 		public bool LockWindows { get; set; }
-	}
-
-	public enum DayOfWeek
-	{
-		Sunday,
-		Monday,
-		Tuesday,
-		Wednesday,
-		Thursday,
-		Friday,
-		Saturday
 	}
 }

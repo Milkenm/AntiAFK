@@ -77,5 +77,20 @@ namespace AntiAfkV2.Properties {
                 this["SchedulesList"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool CheckForUpdates
+        {
+            get
+            {
+                return ((bool)(this["CheckForUpdates"]));
+            }
+            set
+            {
+                this["CheckForUpdates"] = value;
+            }
+        }
     }
 }

@@ -80,6 +80,12 @@ namespace AntiAfkV2
 			this.button_edit = new System.Windows.Forms.Button();
 			this.button_remove = new System.Windows.Forms.Button();
 			this.tabPage_about = new System.Windows.Forms.TabPage();
+			this.label_by = new System.Windows.Forms.Label();
+			this.link_milkenm = new System.Windows.Forms.LinkLabel();
+			this.link_github = new System.Windows.Forms.LinkLabel();
+			this.link_issues = new System.Windows.Forms.LinkLabel();
+			this.label_version = new System.Windows.Forms.Label();
+			this.button_checkUpdate = new System.Windows.Forms.Button();
 			this.tableLayout_main.SuspendLayout();
 			this.panel_buttons.SuspendLayout();
 			this.tabControl.SuspendLayout();
@@ -94,6 +100,7 @@ namespace AntiAfkV2
 			this.panel_action.SuspendLayout();
 			this.tableLayout_schedulerList.SuspendLayout();
 			this.panel_schedulerButtons.SuspendLayout();
+			this.tabPage_about.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// button_save
@@ -626,12 +633,79 @@ namespace AntiAfkV2
 			// 
 			// tabPage_about
 			// 
+			this.tabPage_about.Controls.Add(this.label_by);
+			this.tabPage_about.Controls.Add(this.link_milkenm);
+			this.tabPage_about.Controls.Add(this.link_github);
+			this.tabPage_about.Controls.Add(this.link_issues);
+			this.tabPage_about.Controls.Add(this.label_version);
+			this.tabPage_about.Controls.Add(this.button_checkUpdate);
 			this.tabPage_about.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_about.Name = "tabPage_about";
 			this.tabPage_about.Size = new System.Drawing.Size(336, 203);
 			this.tabPage_about.TabIndex = 2;
 			this.tabPage_about.Text = "About";
 			this.tabPage_about.UseVisualStyleBackColor = true;
+			// 
+			// label_by
+			// 
+			this.label_by.AutoSize = true;
+			this.label_by.Location = new System.Drawing.Point(8, 11);
+			this.label_by.Name = "label_by";
+			this.label_by.Size = new System.Drawing.Size(25, 13);
+			this.label_by.TabIndex = 0;
+			this.label_by.Text = "By: ";
+			// 
+			// link_milkenm
+			// 
+			this.link_milkenm.AutoSize = true;
+			this.link_milkenm.Location = new System.Drawing.Point(30, 11);
+			this.link_milkenm.Name = "link_milkenm";
+			this.link_milkenm.Size = new System.Drawing.Size(46, 13);
+			this.link_milkenm.TabIndex = 1;
+			this.link_milkenm.TabStop = true;
+			this.link_milkenm.Text = "Milkenm";
+			this.link_milkenm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_milkenm_LinkClicked);
+			// 
+			// link_github
+			// 
+			this.link_github.AutoSize = true;
+			this.link_github.Location = new System.Drawing.Point(8, 41);
+			this.link_github.Name = "link_github";
+			this.link_github.Size = new System.Drawing.Size(111, 13);
+			this.link_github.TabIndex = 2;
+			this.link_github.TabStop = true;
+			this.link_github.Text = "Source Code (GitHub)";
+			this.link_github.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_github_LinkClicked);
+			// 
+			// link_issues
+			// 
+			this.link_issues.AutoSize = true;
+			this.link_issues.Location = new System.Drawing.Point(8, 71);
+			this.link_issues.Name = "link_issues";
+			this.link_issues.Size = new System.Drawing.Size(179, 13);
+			this.link_issues.TabIndex = 3;
+			this.link_issues.TabStop = true;
+			this.link_issues.Text = "Report a bug / Request new feature";
+			this.link_issues.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_issues_LinkClicked);
+			// 
+			// label_version
+			// 
+			this.label_version.AutoSize = true;
+			this.label_version.Location = new System.Drawing.Point(8, 173);
+			this.label_version.Name = "label_version";
+			this.label_version.Size = new System.Drawing.Size(28, 13);
+			this.label_version.TabIndex = 4;
+			this.label_version.Text = "v2.0";
+			// 
+			// button_checkUpdate
+			// 
+			this.button_checkUpdate.Location = new System.Drawing.Point(42, 168);
+			this.button_checkUpdate.Name = "button_checkUpdate";
+			this.button_checkUpdate.Size = new System.Drawing.Size(104, 23);
+			this.button_checkUpdate.TabIndex = 5;
+			this.button_checkUpdate.Text = "Check for updates";
+			this.button_checkUpdate.UseVisualStyleBackColor = true;
+			this.button_checkUpdate.Click += new System.EventHandler(this.button_checkUpdate_Click);
 			// 
 			// Options
 			// 
@@ -665,6 +739,8 @@ namespace AntiAfkV2
 			this.panel_action.PerformLayout();
 			this.tableLayout_schedulerList.ResumeLayout(false);
 			this.panel_schedulerButtons.ResumeLayout(false);
+			this.tabPage_about.ResumeLayout(false);
+			this.tabPage_about.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -720,5 +796,11 @@ namespace AntiAfkV2
 		private System.Windows.Forms.Label label_hours;
 		private System.Windows.Forms.NumericUpDown numeric_minutes;
 		private System.Windows.Forms.NumericUpDown numeric_hours;
+		private System.Windows.Forms.Button button_checkUpdate;
+		private System.Windows.Forms.Label label_version;
+		private System.Windows.Forms.LinkLabel link_issues;
+		private System.Windows.Forms.LinkLabel link_github;
+		private System.Windows.Forms.LinkLabel link_milkenm;
+		private System.Windows.Forms.Label label_by;
 	}
 }

@@ -35,9 +35,10 @@ namespace AntiAfkV2
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.enabledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.timer_schedulers = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -67,27 +68,33 @@ namespace AntiAfkV2
 			// 
 			this.enabledToolStripMenuItem.CheckOnClick = true;
 			this.enabledToolStripMenuItem.Name = "enabledToolStripMenuItem";
-			this.enabledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.enabledToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.enabledToolStripMenuItem.Text = "Enabled";
-			// 
-			// toolStripSeparator
-			// 
-			this.toolStripSeparator.Name = "toolStripSeparator";
-			this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
-			// 
-			// sairToolStripMenuItem
-			// 
-			this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-			this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.sairToolStripMenuItem.Text = "Exit";
-			this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
 			// 
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-			this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.settingsToolStripMenuItem.Text = "Settings";
 			this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator
+			// 
+			this.toolStripSeparator.Name = "toolStripSeparator";
+			this.toolStripSeparator.Size = new System.Drawing.Size(113, 6);
+			// 
+			// sairToolStripMenuItem
+			// 
+			this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+			this.sairToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.sairToolStripMenuItem.Text = "Exit";
+			this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+			// 
+			// timer_schedulers
+			// 
+			this.timer_schedulers.Enabled = true;
+			this.timer_schedulers.Interval = 1000;
+			this.timer_schedulers.Tick += new System.EventHandler(this.timer_schedulers_Tick);
 			// 
 			// Main
 			// 
@@ -117,6 +124,7 @@ namespace AntiAfkV2
 		private System.Windows.Forms.ToolStripMenuItem enabledToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+		private System.Windows.Forms.Timer timer_schedulers;
 	}
 }
 

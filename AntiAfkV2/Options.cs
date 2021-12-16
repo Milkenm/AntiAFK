@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace AntiAfkV2
@@ -20,6 +21,8 @@ namespace AntiAfkV2
 			this.InitializeComponent();
 			instance = this;
 			this.SetTooltips();
+			string[] versionSplit = Application.ProductVersion.Split('.');
+			label_version.Text = $"v{versionSplit[0]}.{versionSplit[1]}";
 		}
 
 		private void SetTooltips()
@@ -44,6 +47,7 @@ namespace AntiAfkV2
 			numeric_delay.Value = Settings.Default.Delay;
 			comboBox_timeUnit.SelectedIndex = (int)Settings.Default.TimeUnit;
 			textBox_key.Text = Settings.Default.Key;
+			checkBox_checkForUpdates.Checked = Settings.Default.CheckForUpdates;
 			schedulesList = Settings.Default.SchedulesList;
 			foreach (Schedule schedule in schedulesList)
 			{
@@ -63,6 +67,7 @@ namespace AntiAfkV2
 			numeric_delay.Value = 5;
 			comboBox_timeUnit.SelectedIndex = 0;
 			textBox_key.Text = "{SCROLLLOCK}";
+			checkBox_checkForUpdates.Checked = true;
 		}
 
 		private List<Schedule> schedulesList = new List<Schedule>();
@@ -80,6 +85,7 @@ namespace AntiAfkV2
 			Settings.Default.Delay = Convert.ToInt32(numeric_delay.Value);
 			Settings.Default.TimeUnit = (TimeUnit)comboBox_timeUnit.SelectedIndex;
 			Settings.Default.Key = textBox_key.Text;
+			Settings.Default.CheckForUpdates = checkBox_checkForUpdates.Checked;
 			Settings.Default.Save();
 
 			this.Close();
@@ -133,7 +139,18 @@ namespace AntiAfkV2
 		private bool DoesNameAlreadyExist(string name)
 		{
 			int indexOf = listBox_schedulers.Items.IndexOf(name);
-			return !(EditingIndex != null && indexOf == EditingIndex) || (EditingIndex == null && indexOf != -1);
+			if (indexOf == -1 || (EditingIndex != null && indexOf == EditingIndex))
+			{
+				return false;
+			}
+			else if (indexOf != -1 && EditingIndex == null)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		private List<DayOfWeek> GetSelectedDaysOfWeek()
@@ -226,6 +243,26 @@ namespace AntiAfkV2
 		private void ShowErrorMessage(string message)
 		{
 			MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		}
+
+		private void link_milkenm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("https://github.com/Milkenm");
+		}
+
+		private void link_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("https://github.com/Milkenm/AntiAFK");
+		}
+
+		private void link_issues_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("https://github.com/Milkenm/AntiAFK/issues/new");
+		}
+
+		private void button_checkUpdate_Click(object sender, EventArgs e)
+		{
+			GitHubUpdate.CheckNewVersion();
 		}
 	}
 }
